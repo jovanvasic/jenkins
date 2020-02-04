@@ -4,14 +4,15 @@ pipeline {
     stage('Init') {
       agent any
       steps {
-        dir(path: '${WORKSPACE}')
+        dir(path: './')
         echo 'Hello Step 1'
       }
     }
 
     stage('DoSome') {
       steps {
-        sh 'pwd'
+        sh '''pwd
+ls -al'''
       }
     }
 
